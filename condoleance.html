@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerrit Baardink</title>
+    <!--<link rel="stylesheet" href="./style.css" /></link>-->
+  </head>
+  <style>
+	* {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            height: 100vh;
+        }
+        .image {
+            width: 100%;
+            height: 100vh;
+            margin: auto;
+     }
+	.container2{
+    text-align: center;
+	}
+	.button{
+		height:20px;
+	}
+  </style>
+  <body>
+	<div class=container2>
+	<button id="vorige" onclick="vorige()" class="button">Vorige</button>
+	<span id="pageNumber">1</span>
+	<button id="volgende" onclick="volgende()" class="button">Volgende</button>
+	</div>
+	  <div class="container">
+    <img id="Plaatje" src = "images/EenDeurtjeVerder.svg" alt="Deurtje Verder" class="image"/>
+  </div>
+	<script>
+	var index = 0
+	var pages = ['images/EenDeurtjeVerder.svg','images/FotoEnData.svg','images/condoleance.svg','images/NobodyCouldHaveDoneMore.svg']
+
+	function volgende(){
+		if (index != 3){
+			index +=1
+		}
+		document.getElementById("Plaatje").src=pages[index]
+		document.getElementById("pageNumber").innerHTML = index+1
+	}
+	function vorige(){
+		if (index != 0){
+			index -=1
+		}
+		document.getElementById("Plaatje").src=pages[index]
+		document.getElementById("pageNumber").innerHTML = index+1
+	}
+	</script>
+  </body>
+</html>
